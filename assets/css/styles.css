@@ -255,25 +255,73 @@ img {
 }
 /* ===== RESUME =====*/
  
-.experience h2{
-  float: right ;
-  margin-top: -412px;
-  margin-right: 60px;
-  
+/* General styles for the section */
+.resume {
+  padding: 20px;
+  text-align: center;
 }
-.experience .exp ul {
-  float: right;
-  margin-top: -360px;
-  margin-right: -50px;
+
+/* Container styling for flexbox */
+.resume__container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
-.education ul li{
-  padding: 10px;
-  margin-left: -10px;
+
+/* Individual columns styling */
+.education, .experience {
+  flex: 1 1 300px;
+  min-width: 250px;
+  max-width: 500px; /* To limit the maximum width */
 }
-.experience .exp ul li{
-  padding: 10px;
-  margin-right: -10px;
+
+/* Ensure experience section is on the right */
+.experience {
+  order: 1;
 }
+
+/* Styles for headings */
+.skills__subtitle {
+  margin-bottom: 15px;
+}
+
+/* List item styling */
+.education ul, .experience ul {
+  list-style: none;
+  padding: 0;
+}
+
+.education ul li, .experience ul li {
+  padding: 10px 0;
+  margin-left: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .resume__container {
+      flex-direction: column;
+      align-items: center; /* Center items in column layout */
+  }
+
+  .education, .experience {
+      order: 0;
+      max-width: none; /* Remove max-width on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .skills__subtitle {
+      font-size: 1.2em;
+  }
+
+  .education ul li, .experience ul li {
+      font-size: 0.9em;
+  }
+}
+
+
+
  
 
 
